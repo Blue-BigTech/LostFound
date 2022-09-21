@@ -1,2 +1,3 @@
 # Lost & Found Person Application (Windows) - User, Admin
 
+Users can upload photo of lost people and found people in the user software. Software users can’t however sign up for accounts themselves. Upon launching the user software, general users see a login screen asking for username and password. In the admin software, admin can generate username, password for the general users. In the user software, there are pages where the user can view the photos of lost and found persons uploaded by the user itself. In the admin software, there are also pages where the admin can view, edit and delete the photos of lost and found persons uploaded by all the users combined.
