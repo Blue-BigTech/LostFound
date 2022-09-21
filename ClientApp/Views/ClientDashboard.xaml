@@ -1,0 +1,857 @@
+﻿<Page
+    x:Class="ClientApp.Views.ClientDashboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ClientApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local1="using:ClientApp.ViewModels"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.DataContext>
+        <local1:ClientDashboardViewModel/>
+    </Page.DataContext>
+    <Grid Background="#F0F0F0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".03*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width=".03*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"></RowDefinition>
+            <RowDefinition Height=".7*"></RowDefinition>
+            <RowDefinition Height=".1*"></RowDefinition>
+            <RowDefinition Height="8*"></RowDefinition>
+            <RowDefinition Height="0*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Background="#447295"></Grid>
+        <Grid Grid.Row="1" Grid.Column="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Viewbox HorizontalAlignment="Left">
+                    <Image Source="/Assets/logo.png"/>
+                </Viewbox>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".7*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height=".7*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Viewbox HorizontalAlignment="Right">
+                        <TextBlock Foreground="White" Text="{Binding PoliceStation, Mode=TwoWay}" x:Name="PoliceStation" PointerEntered="NamePointerEntered"></TextBlock>
+                    </Viewbox>
+                </Grid>
+                <Grid Grid.RowSpan="3" x:Name="NavbarHoverGrid" Visibility="Collapsed" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height=".1*"></RowDefinition>
+                        <RowDefinition Height=".5*"></RowDefinition>
+                        <RowDefinition Height=".5*"></RowDefinition>
+                        <RowDefinition Height=".1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width=".2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid CornerRadius="10 10 0 0" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Background="WhiteSmoke">
+
+                    </Grid>
+                    <Grid Padding="0 0 12 0" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Background="WhiteSmoke">
+                        <Viewbox HorizontalAlignment="Right">
+                            <Button Click="ChangePasswordBtnClick" Content="Change Password" HorizontalAlignment="Right" Foreground="Black" Background="Transparent" BorderThickness="0" Padding="10 0 10 0">
+                                <Button.Resources>
+                                    <ResourceDictionary>
+                                        <ResourceDictionary.ThemeDictionaries>
+                                            <ResourceDictionary x:Key="Light">
+                                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
+                                                <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#447295"/>
+                                            </ResourceDictionary>
+                                        </ResourceDictionary.ThemeDictionaries>
+                                    </ResourceDictionary>
+                                </Button.Resources>
+                            </Button>
+                        </Viewbox>
+                    </Grid>
+                    <Grid Grid.Row="2" Padding="0 0 12 0" Grid.Column="1" Grid.ColumnSpan="2" Background="WhiteSmoke">
+                        <Viewbox HorizontalAlignment="Right">
+                            <Button Command="{Binding LogoutCommand}" Content="Logout" HorizontalAlignment="Right" Foreground="Black" Background="Transparent" BorderThickness="0" Padding="10 0 10 0">
+                                <Button.Resources>
+                                    <ResourceDictionary>
+                                        <ResourceDictionary.ThemeDictionaries>
+                                            <ResourceDictionary x:Key="Light">
+                                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
+                                                <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#447295"/>
+                                            </ResourceDictionary>
+                                        </ResourceDictionary.ThemeDictionaries>
+                                    </ResourceDictionary>
+                                </Button.Resources>
+                            </Button>
+                        </Viewbox>
+                    </Grid>
+                    <Grid CornerRadius="0 0 10 10" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Background="WhiteSmoke">
+
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="0" Background="#447295"></Grid>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="227*"></ColumnDefinition>
+                <ColumnDefinition Width="70*"/>
+                <ColumnDefinition Width="1072*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Grid.ColumnSpan="2" Background="#447295">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="22"></RowDefinition>
+                    <RowDefinition Height=".1*"></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                    <RowDefinition Height=".1*"></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                    <RowDefinition Height=".1*"></RowDefinition>
+                    <RowDefinition Height="10"></RowDefinition>
+                    <RowDefinition Height=".1*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!--<Grid Grid.Row="0" HorizontalAlignment="Left">
+                    <Viewbox>
+                        <Image Source="/Assets/logo.png"/>
+                    </Viewbox>
+                </Grid>-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="24*"></ColumnDefinition>
+                    <ColumnDefinition Width="240*"/>
+                    <ColumnDefinition Width="0*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <!--<Grid Grid.Column="2" Grid.RowSpan="9">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width=".1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    -->
+                <!--<Grid Grid.Column="1" Background="#1485CB"></Grid>-->
+                <!--
+                </Grid>-->
+
+                <Grid Grid.Row="1" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                    <Viewbox>
+                        <Button Command="{Binding Path=UploadCommand}" Padding="6 0 6 0" Foreground="Black" FontWeight="Medium" Background="WhiteSmoke" CornerRadius="2"
+                        VerticalAlignment="Center" Width="182" Height="32" FontSize="12" BorderBrush="Transparent" Content="Upload">
+                            <Button.Resources>
+                                <ResourceDictionary>
+                                    <ResourceDictionary.ThemeDictionaries>
+                                        <ResourceDictionary x:Key="Light">
+                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
+                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#447295"/>
+                                            <SolidColorBrush x:Key="ButtonForeground" Color="#BEBEC6"/>
+                                        </ResourceDictionary>
+                                    </ResourceDictionary.ThemeDictionaries>
+                                </ResourceDictionary>
+                            </Button.Resources>
+
+                        </Button>
+                    </Viewbox>
+                </Grid>
+
+                <Grid Grid.Row="3" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                    <Viewbox>
+                        <Button Command="{Binding Path=MatchedPhotosCommand}" Padding="6 0 6 0" Foreground="Black" FontWeight="Medium" Background="WhiteSmoke" CornerRadius="2"
+                        VerticalAlignment="Center" Width="182" Height="32" FontSize="12" BorderBrush="Transparent" x:Name="loginBtn" Content="Matched Photos">
+                            <Button.Resources>
+                                <ResourceDictionary>
+                                    <ResourceDictionary.ThemeDictionaries>
+                                        <ResourceDictionary x:Key="Light">
+                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
+                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#447295"/>
+                                            <SolidColorBrush x:Key="ButtonForeground" Color="#BEBEC6"/>
+                                        </ResourceDictionary>
+                                    </ResourceDictionary.ThemeDictionaries>
+                                </ResourceDictionary>
+                            </Button.Resources>
+
+                        </Button>
+                    </Viewbox>
+                </Grid>
+                <Grid Grid.Row="5" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                    <Viewbox>
+                        <Button Command="{Binding Path=UnmatchedPhotosCommand}" Padding="6 0 6 0" Foreground="Black" FontWeight="Medium" Background="WhiteSmoke" CornerRadius="2"
+                        VerticalAlignment="Center" Width="181" Height="32" FontSize="12" BorderBrush="Transparent" Content="Unmatched Photos">
+                            <Button.Resources>
+                                <ResourceDictionary>
+                                    <ResourceDictionary.ThemeDictionaries>
+                                        <ResourceDictionary x:Key="Light">
+                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
+                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#447295"/>
+                                            <SolidColorBrush x:Key="ButtonForeground" Color="#BEBEC6"/>
+                                        </ResourceDictionary>
+                                    </ResourceDictionary.ThemeDictionaries>
+                                </ResourceDictionary>
+                            </Button.Resources>
+
+                        </Button>
+                    </Viewbox>
+                </Grid>
+                <Grid Grid.Row="7" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                    <Viewbox>
+                        <Button Command="{Binding Path=AllPhotosCommand}" Padding="6 0 6 0" Foreground="Black" FontWeight="Medium" Background="WhiteSmoke" CornerRadius="2"
+                        VerticalAlignment="Center" Width="185" Height="32" FontSize="12" BorderBrush="Transparent" Content="All Photos Uploaded">
+                            <Button.Resources>
+                                <ResourceDictionary>
+                                    <ResourceDictionary.ThemeDictionaries>
+                                        <ResourceDictionary x:Key="Light">
+                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
+                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#447295"/>
+                                            <SolidColorBrush x:Key="ButtonForeground" Color="#BEBEC6"/>
+                                        </ResourceDictionary>
+                                    </ResourceDictionary.ThemeDictionaries>
+                                </ResourceDictionary>
+                            </Button.Resources>
+
+                        </Button>
+                    </Viewbox>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".2*"></RowDefinition>
+                    <RowDefinition Height="6*"></RowDefinition>
+                    <RowDefinition Height=".2*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".17*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                        <ColumnDefinition Width="1.2*"></ColumnDefinition>
+                        <ColumnDefinition Width=".5*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"></RowDefinition>
+                            <RowDefinition Height=".1*"></RowDefinition>
+                            <RowDefinition Height="3*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="3.5*"></ColumnDefinition>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="4*"></RowDefinition>
+                                    <RowDefinition Height=".5*"></RowDefinition>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Border Visibility="{Binding DisplayImageVis}" Grid.Row="0" CornerRadius="100" BorderThickness="1" Background="#7489ad" BorderBrush="#1485CB" Width="160" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Viewbox>
+                                            <Image Grid.Row="0" Source="{Binding DisplayImage}" HorizontalAlignment="Center" Stretch="Fill" Width="160" Height="170"/>
+                                        </Viewbox>
+
+                                    </Border>
+                                    <Border Visibility="{Binding AvatarImageVis}" Grid.Row="0" BorderThickness="1" BorderBrush="Transparent" Width="160" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Viewbox HorizontalAlignment="Left">
+                                            <Image Source="/Assets/avatar.png" HorizontalAlignment="Center" Stretch="Fill" Width="160" Height="170"/>
+                                        </Viewbox>
+                                    </Border>
+                                </Grid>
+                                <Grid Grid.Row="2" >
+                                    <Viewbox>
+                                        <Button Command="{Binding Path=LostPersonPhoto}" Style="{StaticResource ButtonStyle}"
+                                         Width="305" Height="60" FontSize="15" >
+                                            <Button.Resources>
+                                                <ResourceDictionary>
+                                                    <ResourceDictionary.ThemeDictionaries>
+                                                        <ResourceDictionary x:Key="Light">
+                                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
+                                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#7489ad"/>
+                                                        </ResourceDictionary>
+                                                    </ResourceDictionary.ThemeDictionaries>
+                                                </ResourceDictionary>
+                                            </Button.Resources>
+                                            <Viewbox>
+                                                <TextBlock Visibility="{Binding ChoosePhotoVis}" FontWeight="Medium" 
+                        VerticalAlignment="Center"  Width="305" Height="60" FontSize="20"  Padding="35 15 6 0" Text="Choose photo of person"></TextBlock>
+                                            </Viewbox>
+                                        </Button>
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Grid.Row="2" Visibility="{Binding ChoosePhotoProgressRingVis}">
+                                    <Viewbox>
+                                        <ProgressRing HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="30" Foreground="White" IsActive="True"></ProgressRing>
+                                    </Viewbox>
+                                </Grid>
+                            </Grid>
+                            
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".2*"></ColumnDefinition>
+                                <ColumnDefinition Width="1.3*"></ColumnDefinition>
+                                <ColumnDefinition Width=".2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1" VerticalAlignment="Top">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1.2*"></RowDefinition>
+                                    <RowDefinition Height=".45*"></RowDefinition>
+                                    <RowDefinition Height=".4*"></RowDefinition>
+                                    <RowDefinition Height="4*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Viewbox>
+                                    <ComboBox Text="{Binding TypeofPerson, Mode=TwoWay}" ItemsSource="{Binding TypeofPersonsList}" BorderThickness="0" FontSize="17" Padding="16, 0, 10, 4"
+                                Width="400" Height="65" CornerRadius="12" PlaceholderForeground="Black" Foreground="Black" x:Name="Combobox1"
+                        PlaceholderText="Select Person Type" Background="White" Loaded="ComboBoxLoaded" SelectedItem="{Binding ComboBoxSelectionChanged, Mode=TwoWay}">
+                                        <ComboBox.Resources>
+                                            <ResourceDictionary>
+                                                <ResourceDictionary.ThemeDictionaries>
+                                                    <ResourceDictionary x:Key="Light">
+                                                        <SolidColorBrush x:Key="ComboBoxDropDownGlyphForeground" Color="Black" />
+                                                        <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundFocused" Color="Black" />
+                                                        <SolidColorBrush x:Key="ComboBoxDropDownGlyphForegroundPointerOver" Color="Black" />
+                                                        <SolidColorBrush x:Key="ComboBoxDropDownGlyphBackgroundPointerOver" Color="Black" />
+                                                        <SolidColorBrush x:Key="ComboBoxForegroundPointerOver" Color="Black"/>
+                                                        <SolidColorBrush x:Key="ComboBoxBackgroundPointerOver" Color="White"/>
+                                                        <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="White"/>
+                                                        <SolidColorBrush x:Key="TextControlForegroundFocused" Color="Black"/>
+                                                        <SolidColorBrush x:Key="TextControlButtonForeground" Color="Black"/>
+                                                        <SolidColorBrush x:Key="TextControlButtonBackground" Color="White"/>
+                                                    </ResourceDictionary>
+                                                </ResourceDictionary.ThemeDictionaries>
+                                            </ResourceDictionary>
+                                        </ComboBox.Resources>
+                                    </ComboBox>
+                                </Viewbox>
+                                <Grid Grid.Row="1" Visibility="{Binding PersonTypeValidationMsg}">
+                                    <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <TextBlock Text="Required" x:Name="PersonTypeValidationMsg" TextAlignment="Center" TextWrapping="Wrap"
+                               FontSize="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
+                                    </Viewbox>
+                                </Grid>
+                            </Grid>
+
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height=".85*"></RowDefinition>
+                            <RowDefinition Height="4"></RowDefinition>
+                            <RowDefinition Height=".85*"></RowDefinition>
+                            <RowDefinition Height="4"></RowDefinition>
+                            <RowDefinition Height=".85*"></RowDefinition>
+                            <RowDefinition Height="4"></RowDefinition>
+                            <RowDefinition Height=".85*"></RowDefinition>
+                            <RowDefinition Height="4"></RowDefinition>
+                            <RowDefinition Height=".85*"></RowDefinition>
+                            <RowDefinition Height="4"></RowDefinition>
+                            <RowDefinition Height=".85*"></RowDefinition>
+                            <RowDefinition Height="4"></RowDefinition>
+                            <RowDefinition Height=".85*"></RowDefinition>
+                            <RowDefinition Height="4"></RowDefinition>
+                            <RowDefinition Height=".85*"></RowDefinition>
+                            <RowDefinition Height="11"></RowDefinition>
+                            <RowDefinition Height=".1*"></RowDefinition>
+                            <RowDefinition Height="2"></RowDefinition>
+                            <RowDefinition Height=".7*"></RowDefinition>
+                            <RowDefinition Height="8"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" >
+                            <Viewbox>
+                                <TextBox Text="{Binding PersonName, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}"
+                             PlaceholderText="Name" >
+                                    <TextBox.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlForegroundFocused" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForeground" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="Black"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </TextBox.Resources>
+                                </TextBox>
+
+                            </Viewbox>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Viewbox>
+                                <TextBox Text="{Binding ContactPersonName, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}"
+                             PlaceholderText="Name of the contact person" >
+                                    <TextBox.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlForegroundFocused" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForeground" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="Black"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </TextBox.Resources>
+                                </TextBox>
+
+                            </Viewbox>
+                        </Grid>
+
+                        <Grid Grid.Row="4" >
+                            <Viewbox>
+                                <TextBox Text="{Binding ContactPersonPhoneNo, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}" MaxLength="15" TextChanging="CPPhoneNo_TextChanging"
+                             PlaceholderText="Phone number of the contact person">
+                                    <TextBox.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlForegroundFocused" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForeground" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="Black"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </TextBox.Resources>
+                                </TextBox>
+
+                            </Viewbox>
+                        </Grid>
+
+                        <Grid Grid.Row="6">
+                            <Viewbox>
+                                <TextBox Text="{Binding CaseNo, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}" 
+                             PlaceholderText="GD/case number">
+                                    <TextBox.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlForegroundFocused" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForeground" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="Black"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </TextBox.Resources>
+                                </TextBox>
+
+                            </Viewbox>
+                        </Grid>
+
+                        <Grid Grid.Row="8">
+                            <Viewbox>
+                                <TextBox Text="{Binding OfficerName, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}" 
+                             PlaceholderText="Enrollment officer name" >
+                                    <TextBox.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlForegroundFocused" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForeground" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="Black"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </TextBox.Resources>
+                                </TextBox>
+
+                            </Viewbox>
+                        </Grid>
+
+                        <Grid Grid.Row="10">
+                            <Viewbox>
+                                <TextBox Text="{Binding OfficerBPNo, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}" 
+                             PlaceholderText="Enrollment officer BP number" >
+                                    <TextBox.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlForegroundFocused" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForeground" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="Black"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </TextBox.Resources>
+                                </TextBox>
+
+                            </Viewbox>
+                        </Grid>
+
+                        <Grid Grid.Row="12">
+                            <Viewbox>
+                                <TextBox Text="{Binding OfficerPhoneNo, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}" MaxLength="15" TextChanging="OfficerPhoneNo_TextChanging"
+                             PlaceholderText="Enrollment officer phone number" >
+                                    <TextBox.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlForegroundFocused" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForeground" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="Black"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </TextBox.Resources>
+                                </TextBox>
+
+                            </Viewbox>
+                        </Grid>
+
+                        <Grid Grid.Row="14">
+                            <Viewbox>
+                                <TextBox Text="{Binding Remarks, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}" TextWrapping="Wrap" Padding="8 11 8 0"
+                             PlaceholderText="Remarks" >
+                                    <TextBox.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="White"/>
+                                                    <SolidColorBrush x:Key="TextControlForegroundFocused" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForeground" Color="Black"/>
+                                                    <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="Black"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </TextBox.Resources>
+                                </TextBox>
+
+                            </Viewbox>
+                        </Grid>
+
+                        <!--<Grid Grid.Row="16">
+                            <Viewbox>
+                                <TextBlock Text="Fields marked with * are mandatory" Foreground="#6A5ACD"></TextBlock>
+                            </Viewbox>
+                        </Grid>-->
+
+                        <Grid Grid.Row="18">
+                            <Viewbox>
+                                <Button   Click="Submit_Click"  Style="{StaticResource ButtonStyle}" >
+                                    <Button.Resources>
+                                        <ResourceDictionary>
+                                            <ResourceDictionary.ThemeDictionaries>
+                                                <ResourceDictionary x:Key="Light">
+                                                    <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
+                                                    <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#c3cbd9"/>
+                                                    <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                                                </ResourceDictionary>
+                                            </ResourceDictionary.ThemeDictionaries>
+                                        </ResourceDictionary>
+                                    </Button.Resources>
+                                    <Viewbox>
+                                        
+                                        <TextBlock Visibility="{Binding SaveProfileBtnGridVis}" FontWeight="Medium" 
+                           VerticalAlignment="Center"  FontSize="2"  Padding="1 0 0 1" Text="Submit"></TextBlock>
+                                    </Viewbox>
+                                </Button>
+                            </Viewbox>
+                        </Grid>
+                        <Grid Grid.Row="18" Visibility="{Binding SaveProfileBtnProgressRingVis}">
+                            <Viewbox>
+                                <ProgressRing HorizontalAlignment="Stretch" Foreground="White" VerticalAlignment="Center" Height="30" IsActive="True"></ProgressRing>
+                            </Viewbox>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Column="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".2*"></ColumnDefinition>
+                            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                            <ColumnDefinition Width=".2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>                                <RowDefinition Height=".17*"></RowDefinition>                                <RowDefinition Height=".30*"></RowDefinition>                                <RowDefinition Height=".42*"></RowDefinition>                                <RowDefinition Height=".30*"></RowDefinition>                                <RowDefinition Height=".45*"></RowDefinition>                                <RowDefinition Height=".30*"></RowDefinition>                                <RowDefinition Height=".45*"></RowDefinition>                                <RowDefinition Height=".30*"></RowDefinition>                                <RowDefinition Height=".45*"></RowDefinition>                                <RowDefinition Height=".30*"></RowDefinition>                                <RowDefinition Height=".4*"></RowDefinition>                                <RowDefinition Height=".30*"></RowDefinition>                                <RowDefinition Height=".4*"></RowDefinition>                                <RowDefinition Height=".30*"></RowDefinition>                                <RowDefinition Height=".4*"></RowDefinition>                                <RowDefinition Height=".30*"></RowDefinition>                                <RowDefinition Height=".45*"></RowDefinition>                                <RowDefinition Height=".30*"></RowDefinition>                                <RowDefinition Height=".45*"></RowDefinition>                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="1" Visibility="{Binding NameValidationVis}" KeyDown="Grid_KeyDown" >
+                                <Viewbox HorizontalAlignment="Left">
+                                    <TextBlock FontSize="1">Required</TextBlock>
+                                </Viewbox>
+                            </Grid>
+
+                            <Grid Grid.Row="3" Visibility="{Binding CPNameValidationVis}">
+                                <Viewbox HorizontalAlignment="Left">
+                                    <TextBlock FontSize="1">Required</TextBlock>
+                                </Viewbox>
+                            </Grid>
+                            <Grid Grid.Row="5" Visibility="{Binding CPPhoneNoValidationVis}">
+                                <Viewbox HorizontalAlignment="Left">
+                                    <TextBlock FontSize="1">Required</TextBlock>
+                                </Viewbox>
+                            </Grid>
+                            <Grid Grid.Row="5" Visibility="{Binding PhoneNoValidationVis}">
+                                <Viewbox HorizontalAlignment="Left">
+                                    <TextBlock FontSize="1">Include Atleast 15 Digits</TextBlock>
+                                </Viewbox>
+                            </Grid>
+                            <Grid Grid.Row="7" Visibility="{Binding GDNoValidationVis}">
+                                <Viewbox HorizontalAlignment="Left">
+                                    <TextBlock FontSize="1">Required</TextBlock>
+                                </Viewbox>
+                            </Grid>
+
+                            <Grid Grid.Row="9" Visibility="{Binding OfficerNameValidationVis}">
+                                <Viewbox HorizontalAlignment="Left">
+                                    <TextBlock FontSize="1">Required</TextBlock>
+                                </Viewbox>
+                            </Grid>
+                            <Grid Grid.Row="11" Visibility="{Binding OfficerBPNoValidationVis}">
+                                <Viewbox HorizontalAlignment="Left">
+                                    <TextBlock FontSize="1">Required</TextBlock>
+                                </Viewbox>
+                            </Grid>
+                            <Grid Grid.Row="13" Visibility="{Binding OfficerPhoneNoValidationVis}">
+                 
+                                <Viewbox HorizontalAlignment="Left">
+                                    <TextBlock FontSize="1">Required</TextBlock>
+                                </Viewbox>
+                            </Grid>
+                            <Grid Grid.Row="13" Visibility="{Binding OfficerNoValidationVis}">
+                                <Viewbox HorizontalAlignment="Left">
+                                    <TextBlock FontSize="1">Include Atleast 15 Digits</TextBlock>
+                                </Viewbox>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.RowSpan="4" Grid.ColumnSpan="3" x:Name="ResetPopupGridVis" Visibility="{Binding ResetPopupGridVis}">
+            <RelativePanel>
+                <Viewbox HorizontalAlignment="Center">
+                    <Popup x:Name="ResetPasswordPopup" IsOpen="{Binding PopupOpen}" VerticalOffset="110" HorizontalOffset="230" HorizontalAlignment="Center"
+                                   Width="10" Height="320"  LightDismissOverlayMode="On">
+
+                        <Grid Background="#447295" CornerRadius="10 10 10 10" HorizontalAlignment="Center" Width="170" Height="70">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".1*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width=".1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height=".4*"></RowDefinition>
+                                <RowDefinition Height="1.1*"></RowDefinition>
+                                <!--<RowDefinition Height=".1*"></RowDefinition>
+                                <RowDefinition Height="1*"></RowDefinition>-->
+                                <RowDefinition Height=".4*"></RowDefinition>
+                                <RowDefinition Height=".2*"></RowDefinition>
+                                <RowDefinition Height=".8*"></RowDefinition>
+                                <RowDefinition Height=".3*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <Viewbox>
+                                    <TextBox x:Name="NewPassword" Text="{Binding NewPassword, Mode=TwoWay}" Style="{StaticResource TextBoxStyle}"
+                             PlaceholderText="New Password" >
+                                        <TextBox.Resources>
+                                            <ResourceDictionary>
+                                                <ResourceDictionary.ThemeDictionaries>
+                                                    <ResourceDictionary x:Key="Light">
+                                                        <SolidColorBrush x:Key="TextControlForegroundPointerOver" Color="Black"/>
+                                                        <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="White"/>
+                                                        <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="White"/>
+                                                        <SolidColorBrush x:Key="TextControlForegroundFocused" Color="Black"/>
+                                                        <SolidColorBrush x:Key="TextControlButtonForeground" Color="Black"/>
+                                                        <SolidColorBrush x:Key="TextControlButtonForegroundPointerOver" Color="Black"/>
+                                                    </ResourceDictionary>
+                                                </ResourceDictionary.ThemeDictionaries>
+                                            </ResourceDictionary>
+                                        </TextBox.Resources>
+                                    </TextBox>
+                                </Viewbox>
+                            </Grid>
+
+                            <Grid Grid.Row="2" Grid.Column="1" Visibility="{Binding NewPasswordValidationMsg}">
+                                <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding PasswordStrength, Mode=TwoWay}" x:Name="NewPasswordValidationMsg" TextAlignment="Left" TextWrapping="Wrap"
+                               FontSize="5" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                                </Viewbox>
+                            </Grid>
+                            <Grid Grid.Row="4" Grid.Column="1">                                <Grid.ColumnDefinitions>                                    <ColumnDefinition Width="*"></ColumnDefinition>                                    <ColumnDefinition Width="*"></ColumnDefinition>                                    <ColumnDefinition Width=".1*"></ColumnDefinition>                                    <ColumnDefinition Width="*"></ColumnDefinition>                                    <ColumnDefinition Width="*"></ColumnDefinition>                                </Grid.ColumnDefinitions>                                <!--Visibility="{Binding UpdatePasswordGridVis}"-->                                <Grid Grid.Column="1" >                                    <Viewbox>                                        <Button Command="{Binding Path=UpdateUserPasswordCommand}" Style="{StaticResource ButtonStyle}" Foreground="Black" Background="WhiteSmoke" >
+                                            <Button.Resources>
+                                                <ResourceDictionary>
+                                                    <ResourceDictionary.ThemeDictionaries>
+                                                        <ResourceDictionary x:Key="Light">
+                                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
+                                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#447295"/>
+                                                            <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                                                        </ResourceDictionary>
+                                                    </ResourceDictionary.ThemeDictionaries>
+                                                </ResourceDictionary>
+                                            </Button.Resources>
+                                            <Viewbox>
+                                                <TextBlock Visibility="{Binding UpdatePasswordGridVis}" FontWeight="Medium" 
+                        VerticalAlignment="Center"   FontSize="8"  Padding="3 1 5 3" Text="Update"></TextBlock>
+                                            </Viewbox>
+                                        </Button>                                    </Viewbox>                                </Grid>                                <Grid Grid.Row="1" Grid.Column="1" Visibility="{Binding UpdatePasswordProgressRingVis}" x:Name="UpdatePasswordProgressRingVis">
+                                    <Viewbox>
+                                        <ProgressRing HorizontalAlignment="Stretch" Foreground="#447295" VerticalAlignment="Center" Height="30" IsActive="True"></ProgressRing>
+                                    </Viewbox>
+                                </Grid>                                <Grid Grid.Column="3">                                    <Viewbox>                                        <Button  Command="{Binding Path=CancelbtnCommand}" Content="Cancel" Style="{StaticResource ButtonStyle}"  Foreground="Black"  Background="WhiteSmoke">                                            <Button.Resources>                                                <ResourceDictionary>                                                    <ResourceDictionary.ThemeDictionaries>                                                        <ResourceDictionary x:Key="Light">                                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>                                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Gray"/>                                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>                                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="Gray"/>                                                            <SolidColorBrush x:Key="ButtonForeground" Color="White"/>                                                        </ResourceDictionary>                                                    </ResourceDictionary.ThemeDictionaries>                                                </ResourceDictionary>                                            </Button.Resources>                                        </Button>                                    </Viewbox>                                </Grid>                            </Grid>
+                        </Grid>
+                    </Popup>
+                </Viewbox>
+            </RelativePanel>
+        </Grid>
+
+        <Grid Grid.RowSpan="4" Grid.ColumnSpan="3" x:Name="LogoutPopupGrid" Visibility="{Binding LogoutPopupGrid}">
+            <RelativePanel>
+                <Viewbox HorizontalAlignment="Center">
+                    <Popup x:Name="LogoutPopup" IsOpen="{Binding LogoutPopupOpen}" VerticalOffset="120" HorizontalOffset="230" HorizontalAlignment="Center"
+                                   Width="10" Height="320" IsLightDismissEnabled="True" LightDismissOverlayMode="On">
+
+                        <Grid Background="#447295" CornerRadius="10 10 10 10" HorizontalAlignment="Center" Width="170" Height="70">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".1*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width=".1*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height=".1*"></RowDefinition>                                <RowDefinition Height="1*"></RowDefinition>                                <RowDefinition Height=".1*"></RowDefinition>                                <RowDefinition Height=".8*"></RowDefinition>                                <RowDefinition Height=".4*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="1" Grid.Column="1">
+                                <Viewbox>
+                                    <TextBlock Foreground="White" Text="Do you really want to log out from the software?"></TextBlock>
+                                </Viewbox>
+                            </Grid>
+                            <Grid Grid.Row="3" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width=".1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="1">
+                                    <Viewbox>
+                                        <Button FontSize="8" Command="{Binding SureCommand}" Content="Yes" Width="45" Foreground="Black" Background="WhiteSmoke">
+                                            <Button.Resources>
+                                                <ResourceDictionary>
+                                                    <ResourceDictionary.ThemeDictionaries>
+                                                        <ResourceDictionary x:Key="Light">
+                                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
+                                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#447295"/>
+                                                            <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                                                        </ResourceDictionary>
+                                                    </ResourceDictionary.ThemeDictionaries>
+                                                </ResourceDictionary>
+                                            </Button.Resources>
+
+                                        </Button>
+                                    </Viewbox>
+                                </Grid>
+                                <Grid Grid.Column="3">
+                                    <Viewbox>
+                                        <Button FontSize="8" Command="{Binding DontLogoutCommand}" Content="No" Width="45" Foreground="Black"  Background="WhiteSmoke">
+                                            <Button.Resources>
+                                                <ResourceDictionary>
+                                                    <ResourceDictionary.ThemeDictionaries>
+                                                        <ResourceDictionary x:Key="Light">
+                                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>                                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="Gray"/>                                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>                                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="Gray"/>                                                            <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                                                        </ResourceDictionary>
+                                                    </ResourceDictionary.ThemeDictionaries>
+                                                </ResourceDictionary>
+                                            </Button.Resources>
+
+                                        </Button>
+                                    </Viewbox>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Popup>
+                </Viewbox>
+            </RelativePanel>
+        </Grid>
+
+        <Grid x:Name="LoadingBackgroundGrid" Grid.RowSpan="4" Grid.ColumnSpan="3" Background="#8888" Visibility="{Binding LoadingBackgroundGridVis}">
+
+        </Grid>
+
+        <Grid Grid.RowSpan="4" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="1.5*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Column="0"></Grid>
+            <Grid x:Name="NotificationPopupGrid" Grid.Row="2" HorizontalAlignment="Right" Visibility="{Binding NotificationPopupGridVis}">
+
+
+                <Grid >
+                    <RelativePanel>
+                        <Viewbox>
+                            <Popup x:Name="NotificationPopup" IsOpen="{Binding NotificationPopup}" RelativePanel.AlignRightWithPanel="True"
+                                   Width="170" Height="80" IsLightDismissEnabled="True" LightDismissOverlayMode="On">
+                                <Popup.ChildTransitions>
+                                    <TransitionCollection>
+                                        <PaneThemeTransition Edge="Right"/>
+                                    </TransitionCollection>
+                                </Popup.ChildTransitions>
+                                <Grid Background="#1A1C22" CornerRadius="2 2 2 2" HorizontalAlignment="Center" Height="35" Width="160">
+                                    <Grid.ColumnDefinitions>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Margin="0 0 0 0">
+                                        <Viewbox VerticalAlignment="Center" HorizontalAlignment="Center" Width="Auto" Height="11">
+                                            <TextBlock Text="{Binding NotificationMessage, Mode=TwoWay}" x:Name="NotificationMessage" TextAlignment="Center" Padding="0 0 0 0" 
+                                                       FontSize="6" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                                        </Viewbox>
+                                    </Grid>
+                                </Grid>
+                            </Popup>
+                        </Viewbox>
+                    </RelativePanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

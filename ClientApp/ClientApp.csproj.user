@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <Source>E:\Image-recognation\ClientApp\Assets\logo.png</Source>
+    <SmallTileSource>E:\Image-recognation\ClientApp\Assets\logo.png</SmallTileSource>
+    <MediumTileSource>E:\Image-recognation\ClientApp\Assets\logo.png</MediumTileSource>
+    <WideTileSource>E:\Image-recognation\ClientApp\Assets\logo.png</WideTileSource>
+    <LargeTileSource>E:\Image-recognation\ClientApp\Assets\logo.png</LargeTileSource>
+    <AppIconSource>E:\Image-recognation\ClientApp\Assets\logo.png</AppIconSource>
+    <SplashScreenSource>E:\Image-recognation\ClientApp\Assets\logo.png</SplashScreenSource>
+    <PackageLogoSource>E:\Image-recognation\ClientApp\Assets\logo.png</PackageLogoSource>
+    <UapAppxPackageBuildMode>SideloadOnly</UapAppxPackageBuildMode>
+    <AppxShowAllApps>False</AppxShowAllApps>
+    <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
+    <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
+  </PropertyGroup>
+</Project>

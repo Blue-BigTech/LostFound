@@ -1,0 +1,65 @@
+**Debug
+
+*obj
+*.suo
+.vs*
+.vs/*
+.vs/ProfileRecognition/v17/.suo
+
+
+Api/bin*
+Api/obj*
+
+Infrastructure/bin*
+Infrastructure/obj*
+
+Model/bin*
+Model/obj*
+
+Repository/bin*
+Repository/obj*
+
+Common/bin*
+Common/obj*
+
+AdminApp/bin*
+AdminApp/obj*
+ClientApp/obj*
+
+AdminApp/bin*
+ClientApp/bin*
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+/UpgradeLog.htm
+/UpgradeLog2.htm
