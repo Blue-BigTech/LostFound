@@ -152,11 +152,13 @@
     <Content Include="Assets\avatar.png" />
     <Content Include="Assets\Close.png" />
     <Content Include="Assets\delete.png" />
+    <Content Include="Assets\First.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />
+    <Content Include="Assets\Last.png" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\logo.png" />
     <Content Include="Assets\logowhite.png" />

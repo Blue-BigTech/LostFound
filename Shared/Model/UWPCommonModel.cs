@@ -54,7 +54,8 @@ namespace Shared.Model
     }
     public class Page
     {
-        public int PageSize = 120;
+        //public int PageSize = 120;
+        public int PageSize = 5;
         public int PageNum = 1;
         public int SortCol = 0;
         public string SortOrder = "desc";

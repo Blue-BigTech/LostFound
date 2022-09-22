@@ -235,6 +235,7 @@ namespace AdminApp.ViewModels
         private string _notificationMessage = string.Empty;
         private int _pageNo = 1;
         private string _passwordStrength = "";
+        private string _userPageFooter = "Showing 1-12 out of 610 entries";
 
         public string UserName
         {
@@ -358,6 +359,11 @@ namespace AdminApp.ViewModels
         {
             get { return _notificationMessage; }
             set { _notificationMessage = value; OnPropertyChanged("NotificationMessage"); }
+        }
+        public string UserPageFooter
+        {
+            get { return _userPageFooter; }
+            set { _userPageFooter = value; OnPropertyChanged("UserPageFooter"); }
         }
         public int PageNo
         {

@@ -445,7 +445,7 @@
                                             </Button.Resources>
                                             <Viewbox>
                                                 <TextBlock Visibility="{Binding GenerateUserBtnVis}" FontWeight="Medium" VerticalAlignment="Center"
-                                               FontSize="10" Width="45"   Padding="0 0 0 0" Text="Delete All"></TextBlock>
+                                                                   FontSize="10" Width="45"   Padding="0 0 0 0" Text="Delete All"></TextBlock>
                                             </Viewbox>
                                         </Button>
                                     </Viewbox>
@@ -603,18 +603,56 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="1" Grid.Row="1">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2.5*"></ColumnDefinition>
-                                    <ColumnDefinition Width=".8*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2.0*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1.3*"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height=".1*"></RowDefinition>
+                                        <RowDefinition Height=".8*"></RowDefinition>
+                                        <RowDefinition Height=".1*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <Grid Grid.Row="1">
+                                        <Viewbox>
+                                            <TextBlock FontSize="10" Padding="3"  Text="{Binding UserPageFooter}" HorizontalAlignment="Left"></TextBlock>
+                                        </Viewbox>
+                                    </Grid>
+                                </Grid>
                                 <Grid Grid.Column="1">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width=".4*"></ColumnDefinition>
-                                        <ColumnDefinition Width=".0*"></ColumnDefinition>
-                                        <ColumnDefinition Width=".22*"></ColumnDefinition>
-                                        <ColumnDefinition Width=".0*"></ColumnDefinition>
+                                        <ColumnDefinition Width=".4*"></ColumnDefinition>
+                                        <ColumnDefinition Width=".3*"></ColumnDefinition>
+                                        <ColumnDefinition Width=".4*"></ColumnDefinition>
                                         <ColumnDefinition Width=".4*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
+                                    
                                     <Grid Grid.Column="0">
+                                        <Viewbox>
+                                            <Button CornerRadius="50" Command="{Binding Path=PreviousCommand}" IsEnabled="{Binding PreviousButtonEnable}" Style="{StaticResource ButtonStyle}" Width="80" Height="80" Background="Transparent" Padding="0">
+                                                <Image HorizontalAlignment="Left" Source="/Assets/First.png" Width="80"/>
+                                                <Button.Resources>
+                                                    <ResourceDictionary>
+                                                        <ResourceDictionary.ThemeDictionaries>
+                                                            <ResourceDictionary x:Key="Light">
+                                                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="White"/>
+                                                                <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="Transparent"/>
+                                                                <SolidColorBrush x:Key="ButtonForeground" Color="Transparent"/>
+                                                            </ResourceDictionary>
+                                                        </ResourceDictionary.ThemeDictionaries>
+                                                    </ResourceDictionary>
+                                                </Button.Resources>
+
+                                            </Button>
+                                        </Viewbox>
+                                    </Grid>
+                                    <Grid x:Name="DisabledfirstBtnVis" Grid.Column="0" CornerRadius="50" Width="40" Height="40" Background="#8888" Visibility="{Binding DisabledbackBtnVis}">
+                                    </Grid>
+                                    
+                                    <Grid Grid.Column="1">
                                         <Viewbox>
                                             <Button CornerRadius="50" Command="{Binding Path=PreviousCommand}" IsEnabled="{Binding PreviousButtonEnable}" Style="{StaticResource ButtonStyle}" Width="80" Height="80" Background="Transparent" Padding="0">
                                                 <Image HorizontalAlignment="Left" Source="/Assets/Preview.png" Width="80"/>
@@ -635,9 +673,9 @@
                                             </Button>
                                         </Viewbox>
                                     </Grid>
-                                    <Grid x:Name="DisabledbackBtnVis" Grid.Column="0" CornerRadius="50" Width="40" Height="40" Background="#8888" Visibility="{Binding DisabledbackBtnVis}">
-
+                                    <Grid x:Name="DisabledbackBtnVis" Grid.Column="1" CornerRadius="50" Width="40" Height="40" Background="#8888" Visibility="{Binding DisabledbackBtnVis}">
                                     </Grid>
+                                    
                                     <Grid Grid.Column="2" >
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height=".1*"></RowDefinition>
@@ -649,9 +687,9 @@
                                                 <TextBlock FontSize="27" Padding="3" Text="{Binding PageNo}"></TextBlock>
                                             </Viewbox>
                                         </Grid>
-                                        
                                     </Grid>
-                                    <Grid Grid.Column="4">
+
+                                    <Grid Grid.Column="3">
                                         <Viewbox>
                                             <Button  CornerRadius="50" Command="{Binding Path=NextCommand}" IsEnabled="{Binding NextButtonEnable}" Style="{StaticResource ButtonStyle}" Width="80" Height="80" Background="Transparent" Padding="0">
                                                 <Image Source="/Assets/next.png" Width="80"/>
@@ -672,11 +710,31 @@
                                             </Button>
                                         </Viewbox>
                                     </Grid>
+                                    <Grid x:Name="DisabledBtnVis" Grid.Column="3" CornerRadius="50" Width="40" Height="40" Background="#8888" Visibility="{Binding DisabledBtnVis}">
+                                    </Grid>
 
+                                    <Grid Grid.Column="4">
+                                        <Viewbox>
+                                            <Button  CornerRadius="50" Command="{Binding Path=NextCommand}" IsEnabled="{Binding NextButtonEnable}" Style="{StaticResource ButtonStyle}" Width="80" Height="80" Background="Transparent" Padding="0">
+                                                <Image Source="/Assets/Last.png" Width="80"/>
+                                                <Button.Resources>
+                                                    <ResourceDictionary>
+                                                        <ResourceDictionary.ThemeDictionaries>
+                                                            <ResourceDictionary x:Key="Light">
+                                                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="White"/>
+                                                                <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="Transparent"/>
+                                                                <SolidColorBrush x:Key="ButtonForeground" Color="#BEBEC6"/>
+                                                            </ResourceDictionary>
+                                                        </ResourceDictionary.ThemeDictionaries>
+                                                    </ResourceDictionary>
+                                                </Button.Resources>
 
-
-                                    <Grid x:Name="DisabledBtnVis" Grid.Column="4" CornerRadius="50" Width="40" Height="40" Background="#8888" Visibility="{Binding DisabledBtnVis}">
-
+                                            </Button>
+                                        </Viewbox>
+                                    </Grid>
+                                    <Grid x:Name="DisabledBtnLastVis" Grid.Column="4" CornerRadius="50" Width="40" Height="40" Background="#8888" Visibility="{Binding DisabledBtnVis}">
                                     </Grid>
                                 </Grid>
                                 <!--
