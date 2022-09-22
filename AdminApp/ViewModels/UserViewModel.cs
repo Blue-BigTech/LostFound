@@ -12,6 +12,8 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using static Shared.UWPExtension;
 
+using System.Diagnostics;
+
 namespace AdminApp.ViewModels
 {
     public class UserViewModel : BaseViewModel
@@ -390,6 +392,11 @@ namespace AdminApp.ViewModels
             get { return new DelegateCommand(GenerateUser); }
 
         }
+        public ICommand DeleteAllUserCommand
+        {
+            get { return new DelegateCommand(DeleteAllUser); }
+
+        }
         public ICommand UpdateUserPasswordCommand
         {
             get { return new DelegateCommand(ResetUserPassword); }
@@ -753,6 +760,10 @@ namespace AdminApp.ViewModels
             }
         }
 
+        public async void DeleteAllUser()
+        {
+            Debug.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>> Not implement yet");
+        }
         //private async void GridResetPassword(string code)
         //{
         //    try

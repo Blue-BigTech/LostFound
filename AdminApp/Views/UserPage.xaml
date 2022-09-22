@@ -422,32 +422,55 @@
                                FontSize="1" FontWeight="Medium" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black"/>
                                 </Viewbox>
                             </Grid>
-                            <Grid Grid.Row="6" HorizontalAlignment="Right" Grid.ColumnSpan="4">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-
-                                <Viewbox Grid.Column="1" HorizontalAlignment="Right">
-                                    <Button Command="{Binding Path=GenerateUserCommand}" Style="{StaticResource ButtonStyle}" FontSize="7" Width="45" Background="#447295"  >
-                                        <Button.Resources>
-                                            <ResourceDictionary>
-                                                <ResourceDictionary.ThemeDictionaries>
-                                                    <ResourceDictionary x:Key="Light">
-                                                        <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
-                                                        <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
-                                                        <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
-                                                        <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#447295"/>
-                                                    </ResourceDictionary>
-                                                </ResourceDictionary.ThemeDictionaries>
-                                            </ResourceDictionary>
-                                        </Button.Resources>
-                                        <Viewbox>
-                                            <TextBlock Visibility="{Binding GenerateUserBtnVis}" FontWeight="Medium" VerticalAlignment="Center"
+                            <Grid Grid.Row="6" HorizontalAlignment="Stretch" Grid.ColumnSpan="4">
+                                <Grid Grid.Row="0" Grid.Column="0"  BorderThickness="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        <ColumnDefinition Width=".5*"></ColumnDefinition>
+                                        <ColumnDefinition Width=".5*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Viewbox Grid.Column="1" HorizontalAlignment="Right">
+                                        <Button Command="{Binding Path=DeleteAllUserCommand}" Style="{StaticResource ButtonStyle}" FontSize="7" Width="45" Background="#FFCA3636"  >
+                                            <Button.Resources>
+                                                <ResourceDictionary>
+                                                    <ResourceDictionary.ThemeDictionaries>
+                                                        <ResourceDictionary x:Key="Light">
+                                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#FF954444"/>
+                                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#FF954444"/>
+                                                        </ResourceDictionary>
+                                                    </ResourceDictionary.ThemeDictionaries>
+                                                </ResourceDictionary>
+                                            </Button.Resources>
+                                            <Viewbox>
+                                                <TextBlock Visibility="{Binding GenerateUserBtnVis}" FontWeight="Medium" VerticalAlignment="Center"
+                                               FontSize="10" Width="45"   Padding="0 0 0 0" Text="Delete All"></TextBlock>
+                                            </Viewbox>
+                                        </Button>
+                                    </Viewbox>
+                                    <Viewbox Grid.Column="2" HorizontalAlignment="Right">
+                                        <Button Command="{Binding Path=GenerateUserCommand}" Style="{StaticResource ButtonStyle}" FontSize="7" Width="45" Background="#447295"  >
+                                            <Button.Resources>
+                                                <ResourceDictionary>
+                                                    <ResourceDictionary.ThemeDictionaries>
+                                                        <ResourceDictionary x:Key="Light">
+                                                            <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                                            <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="#447295"/>
+                                                            <SolidColorBrush x:Key="ButtonForegroundPressed" Color="White"/>
+                                                            <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="#447295"/>
+                                                        </ResourceDictionary>
+                                                    </ResourceDictionary.ThemeDictionaries>
+                                                </ResourceDictionary>
+                                            </Button.Resources>
+                                            <Viewbox>
+                                                <TextBlock Visibility="{Binding GenerateUserBtnVis}" FontWeight="Medium" VerticalAlignment="Center"
                                                FontSize="10" Width="45"   Padding="0 0 0 0" Text="Generate"></TextBlock>
-                                        </Viewbox>
-                                    </Button>
-                                </Viewbox>
+                                            </Viewbox>
+                                        </Button>
+                                    </Viewbox>
+                                </Grid>
+
                             </Grid>
                             <Grid Grid.Row="6" Visibility="{Binding GenerateUserBtnProgressRingVis}" HorizontalAlignment="Right" Grid.ColumnSpan="4">
                                 <Grid.ColumnDefinitions>
@@ -541,8 +564,6 @@
                                         <controls:DataGridTemplateColumn Header="Reset Password"   Width="160">
                                             <controls:DataGridTemplateColumn.CellTemplate >
                                                 <DataTemplate >
-
-
                                                     <Button Click="btnReset_Click" CommandParameter="{Binding Code}"  HorizontalAlignment="Center" Padding="0" BorderThickness="0" Width="25" Height="25" Background="Transparent">
                                                         <Image Source="/Assets/refresh40.png" />
                                                         <Button.Resources >
