@@ -36,10 +36,11 @@ namespace AdminApp.Views
             NewPassword.Text = "";
             ItemCode.Text = (sender as Button).CommandParameter.ToString();
             var viewModel = (UserViewModel)DataContext;
+            viewModel.ResetUserPWD();
             //LoadingBackgroundGrid.Visibility = Visibility.Visible;
-            viewModel.LoadingBackgroundGridVis = Visibility.Visible;
-            viewModel.ResetPopupGridVis = Visibility.Visible;
-            viewModel.PopupOpen = true;
+            //viewModel.LoadingBackgroundGridVis = Visibility.Visible;
+            //viewModel.ResetPopupGridVis = Visibility.Visible;
+            //viewModel.PopupOpen = true;
         }
 
         private void ChangePasswordBtnClick(object sender, RoutedEventArgs e)

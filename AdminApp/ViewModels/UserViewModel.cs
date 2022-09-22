@@ -533,13 +533,18 @@ namespace AdminApp.ViewModels
             }
         }
 
+        public async void ResetUserPWD()
+        {
+            ResetUserPassword();
+        }
+
         private async void ResetUserPassword()
         {
             try
             {
                 ResetPassword resetpassword = new ResetPassword
                 {
-                    UserPassword = NewPassword,
+                    UserPassword = GeneratePassword(),
                     Code = (StaticContext.IsNavbarPopup) == true ? StaticContext.UserId : ItemCode
                 };
 
@@ -556,12 +561,14 @@ namespace AdminApp.ViewModels
                             {
                                 UserDetail();
                                 NewPassword = "";
-                                CancelPopup();
+                                //CancelPopup();
                                 OpenNotificationPopup();
                                 NotificationMessage = response.Detail;
                                 CloseMessageTimer();
                                 UpdatePasswordGridVis = Visibility.Visible;
                                 UpdatePasswordProgressRingVis = Visibility.Collapsed;
+                                NewPasswordValidationMsg = Visibility.Collapsed;
+                                PasswordStrength = "";
                             }
                             else
                             {
@@ -572,15 +579,14 @@ namespace AdminApp.ViewModels
                         }).AsTask();
                     });
                 }
-                else
-                {
-                    if (string.IsNullOrEmpty(resetpassword.UserPassword))
-                    {
-                        NewPasswordValidationMsg = Visibility.Visible;
-                        PasswordStrength = "Required";
-                    }
-                }
-
+                //else
+                //{
+                //    if (string.IsNullOrEmpty(resetpassword.UserPassword))
+                //    {
+                //        NewPasswordValidationMsg = Visibility.Visible;
+                //        PasswordStrength = "Required";
+                //    }
+                //}
             }
             catch (Exception ex)
             {
